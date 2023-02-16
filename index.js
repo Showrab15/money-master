@@ -3,6 +3,7 @@
 // step-1 add event listener to the deposit button
 document.getElementById('calculate-btn').addEventListener('click', function(){
 
+
     // step-2: get the deposit amount  from the deposit input field
     // for input filed use .value to the get the value from inside input filed
     const incomeField = document.getElementById('income-box');
@@ -47,16 +48,30 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
          return;
      }
 
-const expense = newRentAmount + newFoodAmount + newClothesAmount;
-const total = document.getElementById('total-expense');
-total.innerText = expense;
 
 
+       
+    
 
+     const expense = newRentAmount + newFoodAmount + newClothesAmount;
 
-const myBalance = newIncomeAmount - expense;
+    
+      
+    
+        if(expense > newIncomeAmount){
+            alert('sorry!your Income balance is less than your expense balance .So please Try to expense as many income balance you have')
+            
+        }
+    else{
+        const total = document.getElementById('total-expense');
+        total.innerText = expense;
+        const myBalance = newIncomeAmount - expense;
 const balance = document.getElementById('total-balance');
 balance.innerText = myBalance;
+
+    }
+
+
 
 
 })
